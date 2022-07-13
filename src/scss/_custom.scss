@@ -1,0 +1,146 @@
+// Here you can add other styles
+.custcusrsor{
+    cursor: pointer;
+}
+html,body{
+    height:100%;
+    width:100%
+    }
+    .maindiv{
+      display: flex;
+    }
+    .book__mainContainer{
+    
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 50px;
+      overflow: scroll;
+    height:650px;
+    object-fit: contain;
+    margin-left: 130px;
+    }
+    
+    .book_buttoncontainer{
+      display: flexbox;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .bg-img {
+      /* The image used */
+    //   background-image: url("bg.png");
+    
+      /* Control the height of the image */
+      width: 100%;
+      object-fit: contain;
+    
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    
+    }
+    
+    .book__container{
+     
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      border-radius: 5px;
+      border: 1px solid lightgray;
+      padding: 20px;
+      background-color: white;
+     
+    }
+    
+    .book__leftContent{
+      display:flex;
+      justify-content: center;
+      flex-direction: column;
+      align-self: baseline;
+      justify-content: space-between;
+     
+    }
+    .book__rightContent{
+      display:flex;
+     
+      flex-direction: column;
+      align-self: flex-start;
+      justify-content: space-between;
+      padding-left: 100px;
+    }
+    
+    .book__calculation{
+      display:flex;
+     
+      flex-direction: column;
+    
+      justify-content: space-between;
+      padding-left: 100px;
+    }
+    
+    .book__fees{
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .book__feeSpan{
+      width:150px
+    }
+    .book__feemulti{
+      width:100px
+    }
+    .book__button{
+      height: 40px;
+      width: 400px;
+      display: flex;
+      align-self: center;
+    }
+    .book__noBox{
+      width:50px;
+    }
+    
+    .header__logo {
+      /* The image used */
+    //   background-image: url("tourlogo.png");
+    
+      /* Control the height of the image */
+     
+        position: absolute;
+        width: 87px;
+        height: 87px;
+        left: 40px;
+     
+        overflow: visible;
+      object-fit: contain;
+    
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    .bg {
+      /* The image used */
+      
+    
+      /* Full height */
+      height: 100%;
+    
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .react-date-picker__clear-button{
+      display: none;
+    }
+    .rdt_TableHeader{
+      display: none;
+    }
+    .clearfixmargin{
+      margin: 2%;
+    }
