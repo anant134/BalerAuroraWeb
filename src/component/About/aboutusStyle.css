@@ -1,0 +1,15 @@
+.about-container{
+    padding: 4rem 6rem;
+    text-align: start;
+}
+.about-container h1{
+    padding-bottom:1rem ;
+}
+.about-container p{
+    padding-bottom: 2rem;
+}
+@media screen and (min-width: 321px) and (max-width:768px){
+    .about-container{
+        padding: 1rem 1rem;
+    }
+}

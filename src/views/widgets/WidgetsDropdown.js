@@ -42,7 +42,7 @@ const WidgetsDropdown = () => {
       data: { isCurrentMonth: isFetchCurrentMonth, month: Month }
     })
       .then(function (data) {
-        //debugger;
+        // 
         if (data.resultkey == 1) {
           var _GARawdata = [];
           var _GAData = [];
@@ -82,7 +82,7 @@ const WidgetsDropdown = () => {
               }
             }
           }
-          debugger;
+
           setCRawData(_CRawdata)
           setCData(_CData);
           setCLabel(_Clabels);
@@ -138,7 +138,7 @@ const WidgetsDropdown = () => {
     switch (opt) {
       case "GA":
 
-        debugger;
+
         var _GAData = [];
         var _GAlabels = [];
         var newGAData = GARawData.filter(x => parseFloat(x.mnt) == id);
@@ -156,7 +156,7 @@ const WidgetsDropdown = () => {
 
         break;
       case "C":
-        debugger;
+
         var _CData = [];
         var _Clabels = [];
         var newCData = CRawData.filter(x => parseFloat(x.mnt) == id);

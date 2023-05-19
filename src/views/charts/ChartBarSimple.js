@@ -20,7 +20,7 @@ const ChartBarSimple = props => {
     if (Array.isArray(dataPoints)) {
       for (let index = 0; index < dataPoints.length; index++) {
         const element = dataPoints[index];
-        //  debugger;
+        //   
         datareturn.push({
           label: element.label,
           backgroundColor: element.backgroundColor,

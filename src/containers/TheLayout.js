@@ -7,26 +7,27 @@ import {
 } from './index'
 
 const TheLayout = () => {
-  
-  
-  
-  var login=localStorage.getItem("userinfo");
-  if(login!==null){
- 
-   // window.location.href=window.location.pathname+  "#/dashboard";
-  }else{
-    window.location.href=window.location.pathname+  "#/registernew";
+
+
+
+  var login = localStorage.getItem("userinfo");
+  if (login !== null) {
+
+    // window.location.href=window.location.pathname+  "#/dashboard";
+  } else {
+    //window.location.href=window.location.pathname+  "#/registernew";
+    window.location.href = window.location.pathname + "#/homepage";
   }
-   
+
   return (
     <div className="c-app c-default-layout">
-      <TheSidebar/>
+      <TheSidebar />
       <div className="c-wrapper">
-        <TheHeader/>
+        <TheHeader />
         <div className="c-body">
-          <TheContent/>
+          <TheContent />
         </div>
-        <TheFooter/>
+        <TheFooter />
       </div>
     </div>
   )

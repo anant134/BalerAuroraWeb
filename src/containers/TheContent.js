@@ -8,21 +8,20 @@ import { CContainer, CFade } from '@coreui/react'
 
 // routes config
 import routes from '../routes'
-  
+
 const loading = (
   <div className="pt-3 text-center">
     <div className="sk-spinner sk-spinner-pulse"></div>
   </div>
 )
-var login=localStorage.getItem("userinfo");
- 
-if(login!==null){
- 
-  window.location.href=window.location.pathname+  "#/dashboard";
-}else{
-  window.location.href=window.location.pathname+  "#/registernew";
+var login = localStorage.getItem("userinfo");
+
+if (login !== null) {
+  window.location.href = window.location.pathname + "#/dashboard";
+} else {
+  window.location.href = window.location.pathname + "#/homepage";
 }
- 
+
 
 const TheContent = () => {
   return (

@@ -71,6 +71,7 @@ const PenaltyClauseMst = React.lazy(() => import('./views/disclaimer/PenaltyClau
 const RefundProcedureMst = React.lazy(() => import('./views/disclaimer/RefundProcedureMst'));
 const FAQsMst = React.lazy(() => import('./views/disclaimer/FAQ'));
 const TourismPolicyMst = React.lazy(() => import('./views/disclaimer/TourismPolicy'));
+const Home = React.lazy(() => import('./views/pages/homepage/Home'));
 
 
 const routes = [
@@ -78,6 +79,7 @@ const routes = [
   { path: '/paymentresult', name: 'paymentresult', component: PaymentResult },
   { path: '/register', name: 'register', component: Register },
   { path: '/registernew', name: 'registernew', component: RegisterNew },
+  { path: '/homepage', name: 'homepage', component: Home },
   { path: '/booking', name: 'booking', component: Booking },
   { path: '/test', name: 'test', component: Test },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -120,19 +122,19 @@ const routes = [
   { path: '/notifications/modals', name: 'Modals', component: Modals },
   { path: '/notifications/toaster', name: 'Toaster', component: Toaster },
   { path: '/widgets', name: 'Widgets', component: Widgets },
-  { path: '/users', exact: true,  name: 'Users', component: Users },
-  { path: '/fees', exact: true,  name: 'Fees', component: Fees },
-  { path: '/slot', exact: true,  name: 'Slot', component: Slot },
-  { path: '/boat', exact: true,  name: 'Boat', component: Boat },
-  { path: '/vehicle', exact: true,  name: 'Vehicle', component: Vehicle },
-  { path: '/discount', exact: true,  name: 'Discount', component: Discount },
-  { path: '/port', exact: true,  name: 'Port', component: Port },
-  { path: '/country', exact: true,  name: 'Country', component: Country },
-  { path: '/citizenship', exact: true,  name: 'Citizenship', component: Citizenship },
-  { path: '/hotel', exact: true,  name: 'Hotel', component: Hotel },
-  { path: '/province', exact: true,  name: 'Province', component: Province },
-  { path: '/municipality', exact: true,  name: 'Municipality', component: Municipality },
-  { path: '/package', exact: true,  name: 'Package', component: Package },
+  { path: '/users', exact: true, name: 'Users', component: Users },
+  { path: '/fees', exact: true, name: 'Fees', component: Fees },
+  { path: '/slot', exact: true, name: 'Slot', component: Slot },
+  { path: '/boat', exact: true, name: 'Boat', component: Boat },
+  { path: '/vehicle', exact: true, name: 'Vehicle', component: Vehicle },
+  { path: '/discount', exact: true, name: 'Discount', component: Discount },
+  { path: '/port', exact: true, name: 'Port', component: Port },
+  { path: '/country', exact: true, name: 'Country', component: Country },
+  { path: '/citizenship', exact: true, name: 'Citizenship', component: Citizenship },
+  { path: '/hotel', exact: true, name: 'Hotel', component: Hotel },
+  { path: '/province', exact: true, name: 'Province', component: Province },
+  { path: '/municipality', exact: true, name: 'Municipality', component: Municipality },
+  { path: '/package', exact: true, name: 'Package', component: Package },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/boatstatus', exact: true, name: 'Boat Status', component: Boatstatus },
   { path: '/bookinghistory', exact: true, name: 'Boat Status', component: BookingHistory },
@@ -143,7 +145,7 @@ const routes = [
   { path: '/PC', exact: true, name: 'Penalty Clause', component: PenaltyClauseMst },
   { path: '/FAQs', exact: true, name: 'FAQ', component: FAQsMst },
   { path: '/TP', exact: true, name: 'Tourism Policy', component: TourismPolicyMst },
-  { path: '/role', exact: true,  name: 'Role', component: Role },
+  { path: '/role', exact: true, name: 'Role', component: Role },
 ];
 
 export default routes;

@@ -9,7 +9,8 @@ const dataservice = async (controller, reqbody) => {
   //common.baseurl +;
   // https://maubantourism.smartpay.ph/
   // https://tourism-test.smartpay.ph/
-  const url = "https://maubantourism.smartpay.ph/tourbookingphp/" + controller + ".php"
+  const url = "https://balertourism.smartpay.ph/balertourism/balertourismphp/" + controller + ".php"
+  //const url = "http://localhost:90/BalerAuroraPHP/" + controller + ".php"
   return await fetch(url, requestOptions)
     .then(async response => {
       const data = await response.json();

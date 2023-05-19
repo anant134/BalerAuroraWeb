@@ -1,0 +1,100 @@
+.wrapper{
+    background: #ececec;
+    padding: 9px 20px 9px 20px;
+    overflow: hidden;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    min-height: 100hv;
+}
+
+.row{
+    width: 900px;
+    height: 550px;
+    border-radius:10px;
+    background: #fff;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+  }
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.text p{
+    color: #fff;
+    font-size: 15px;
+}
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.input-box{
+    width: 330px;
+    box-sizing: border-box;
+}
+.input-box header{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 45px;
+}
+.input-field{
+display: flex;
+flex-direction: column;
+position: relative;
+padding: 0 10px 0 10px;
+}
+.input{
+  height: 45px;
+  width: 100%;
+  background:transparent;
+  border: none; 
+  border-bottom: 1px solid rgba(0,0,0,0.2); 
+  outline: none;
+  margin-bottom:20px;
+  color:#40414a;
+}
+.input-box .input-field label{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-field .input:focus ~label{
+    top: -10px;
+    font-size: 13px;
+}
+.input-field .input:valid ~label{
+    top: -10px;
+    font-size: 13px;
+    color: #5d5076;
+}
+.input-field .input:focus, .input-field .input:valid{
+    border-bottom: 1px solid #743ae1;
+}
+.submit{
+    border: none;
+    outline: none;
+    height: 45px;
+    background: #ececec;
+    border-radius: 5px;
+    transition: .4s;
+}
+.submit:hover{
+    background: #ed1b24;
+    color: #fff;
+}
+
+.side-image{
+    background-image: url('https://images.unsplash.com/photo-1598147783098-ebe878df2c08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmFsZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 10px 0 0 10px;
+}

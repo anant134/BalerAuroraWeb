@@ -158,7 +158,7 @@ const TravelInfo = (traveldata) => {
 
   };
   const handleChangeOptionTS = (e) => {
-    debugger;
+
     setSelectedTimeSlot(e.value);
 
     //setSelectedTimeSlot(Array.isArray(e) ? e.map((x) => x.value) : []);
@@ -207,7 +207,7 @@ const TravelInfo = (traveldata) => {
   const getBoatType = () => {
     dataservice("boattype", { requestfor: "getboattype", data: { flag: "a" } })
       .then(function (data) {
-        debugger;
+
         if (data.resultkey == 1) {
           var result = data.resultvalue;
           var countdata = [];
@@ -270,7 +270,7 @@ const TravelInfo = (traveldata) => {
 
       return item;
     });
-    debugger;
+
     setBoatTypeData(newdata);
     setSelectedTimeSlot(null);
 
@@ -404,7 +404,7 @@ const TravelInfo = (traveldata) => {
   const handleChangeOptionBC = (e) => {
     // var bc = boatdata.filter(obj => obj.value === e.value);
     // setSelectedBoatData(bc);
-    debugger;
+
     setSelectedBoatData(Array.isArray(e) ? e.map((x) => x.value) : []);
     //let bcapacityitem = boatdata.result.find(obj => obj.id === e.value);
   };
@@ -459,7 +459,7 @@ const TravelInfo = (traveldata) => {
       .then(function (data) {
         if (data.resultkey == 1) {
           var tempdata = data.resultvalue;
-          debugger;
+
           var result = [];
 
           var countdata = [];
@@ -868,7 +868,7 @@ const TravelInfo = (traveldata) => {
   const getslotdata = () => {
     dataservice("slots", { requestfor: "getslots", data: { flag: "a" } })
       .then(function (data) {
-        debugger;
+
         if (data.resultkey == 1) {
           var tempdata = data.resultvalue;
 
@@ -908,8 +908,9 @@ const TravelInfo = (traveldata) => {
 
   /*#region useeffect  */
   useEffect(() => {
+
     var ss = gacc;
-    getBoatType();
+    // getBoatType();
     getboatboatavailabilitybydate();
     getnumberofguest();
     setLocalTravelInfoData(...localtravelinfodata, traveldata.data);
@@ -1057,7 +1058,7 @@ const TravelInfo = (traveldata) => {
     }
   }, [packagedata]);
   useEffect(() => {
-    debugger;
+
     if (selectedboatdata.length > 0) {
       // var bc = boatdata.filter(obj => obj.value === selectedboatdata);
       var selectedboats = [];
@@ -1495,7 +1496,7 @@ const TravelInfo = (traveldata) => {
   };
 
   const validationmainscreen = () => {
-    debugger;
+
     var result = true;
     if (localtravelinfodata.numberofguest == "") {
       notify(2, "Please select number of guest");
@@ -1544,7 +1545,7 @@ const TravelInfo = (traveldata) => {
         return false;
       }
       if (selectedtimeslot == "" || selectedtimeslot == null || selectedtimeslot == 0) {
-        notify(2, "Please select time of arrive in mauban.");
+        notify(2, "Please select time of arrive.");
         return false;
       }
     }
@@ -2345,9 +2346,6 @@ const TravelInfo = (traveldata) => {
       packageinfo: {},
       bulkUpload: localtravelinfodata.isBulkUpload,
     };
-    // console.log(submitdata);
-    // return;
-    //check availability
     dataservice("booking", {
       requestfor: "checkavailability",
       data: {
@@ -2829,14 +2827,14 @@ const TravelInfo = (traveldata) => {
                   </div>
 
 
-                  <div className="row">
+                  {/* <div className="row">
                     <div className="col-lg-6 col-md-12 mb-6">
                       Select Package
                       <span style={{ color: "red" }}>
                         <sup>*</sup>
                       </span>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="row">
                     {(() => {
                       const rows = [];
@@ -2877,7 +2875,7 @@ const TravelInfo = (traveldata) => {
                       <h6> Sechdule </h6>
                       <div className="col-lg-8 col-md-12 mb-4">
                         <label for="guests">
-                          Time of Arrival in Mauban
+                          Time of Arrival
                           <span style={{ color: "red" }}>
                             <sup>*</sup>
                           </span>
@@ -2897,7 +2895,7 @@ const TravelInfo = (traveldata) => {
 
 
                   </div>
-                  <div className="card" hidden={!isshowboatselection}>
+                  {/* <div className="card" hidden={!isshowboatselection}>
                     <div className="card-body">
                       <h6> Boat selections  </h6>
                       <div className="row">
@@ -2928,7 +2926,7 @@ const TravelInfo = (traveldata) => {
 
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="card">
                     <div className="card-body">
                       <h6>Hotel Details</h6>
@@ -3460,18 +3458,18 @@ const TravelInfo = (traveldata) => {
                     <sup>* Marked fields are mandatory</sup>
                   </span>{" "}
                 </div>
-                <div>
+                {/* <div>
                   <span style={{ color: "black" }}>
                     <sup>
                       * Additional Charges will applied for island hopping
                     </sup>
                   </span>{" "}
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                   <span style={{ color: "green" }}>
                     <sup>P=Purchase R=Rental A=Already have</sup>
                   </span>{" "}
-                </div>
+                </div> */}
                 <div>
                   <span style={{ color: "green" }}>
                     <sup>RE=Return Guest N=New</sup>
@@ -3576,11 +3574,7 @@ const TravelInfo = (traveldata) => {
                                   </sup>
                                   <br></br>
                                   <small className="text-muted">
-                                    RE:{etafretunrguest} X {0}
-                                  </small>
-                                  <br></br>
-                                  <small className="text-muted">
-                                    N:{etafnonretunrguest} X {feedata.amount}
+                                    {etafnonretunrguest} X {feedata.amount}
                                   </small>
                                 </div>
                                 <span className="text-muted">
@@ -3603,11 +3597,11 @@ const TravelInfo = (traveldata) => {
                                   >
                                     Environmental Tourism and Administrative Fee
                                   </sup>
-                                  <br></br>
+                                  {/* <br></br>
                                   <small className="text-muted">
                                     RE:{etafretunrguest} X {0}
                                   </small>
-                                  <br></br>
+                                  <br></br> */}
                                   <small className="text-muted">
                                     N:{etafnonretunrguest} X 80
                                   </small>
@@ -3631,7 +3625,7 @@ const TravelInfo = (traveldata) => {
                                 <small className="text-muted">
                                   P : {purchase} X {feedata.amount}
                                 </small>
-                                <br></br>
+                                {/* <br></br>
                                 <small className="text-muted">
                                   R : {rental} X {feedata.rentprice}
                                 </small>
@@ -3639,7 +3633,7 @@ const TravelInfo = (traveldata) => {
                                 <small className="text-muted">
                                   A : {alreadyhave} X {0}
                                 </small>
-                                <br></br>
+                                <br></br> */}
                               </div>
                               <span className="text-muted">
                                 {(

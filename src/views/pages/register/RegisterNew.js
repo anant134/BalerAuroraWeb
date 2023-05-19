@@ -38,7 +38,7 @@ import { discounticon } from 'src/assets/icons/discounticon';
 import moment from 'moment';
 import uuid from 'react-uuid';
 import FeesComputation from '../register/FeesComputation'
-import TravelInfo from '../register/TravelInfo'
+import TravelInfo from '../register/NewTravelInfoBA'
 import GuestInfo from '../register/GuestInfo'
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Toast from 'react-bootstrap/Toast';
@@ -87,29 +87,26 @@ const RegisterNew = () => {
     numberofguest: 0,
     startdate: new Date(),
     enddate: new Date(),
-    package: [],
-    boatinfo: [],
+    arrivetime: "",
     guestinfo: [],
     hotel: [],
     hotelbookingref: "",
-    vehicle: [],
     fees: [{ feefor: "ETAF", discountable: true, amount: 0, sequencenumber: 1, id: 1, rentprice: 0 },
-    { feefor: "Bracelet", discountable: true, amount: 0, sequencenumber: 2, id: 4, rentprice: 0 },
-    { feefor: "Boat", discountable: true, amount: 0, sequencenumber: 3, id: 2, rentprice: 0 },
-    { feefor: "Package", discountable: true, amount: 0, sequencenumber: 4, id: 3, rentprice: 0 },
-    { feefor: "IsLand Hopping", discountable: true, amount: 0, sequencenumber: 6, id: 9, rentprice: 0 },
-    { feefor: "Parking ", discountable: false, amount: 0, sequencenumber: 6, id: 5, rentprice: 0 },
-    { feefor: "Discount", discountable: true, amount: 0, sequencenumber: 5, id: 6, rentprice: 0 },
-    { feefor: "Exemption", discountable: true, amount: 0, sequencenumber: 6, id: 7, rentprice: 0 },
-    { feefor: "Total", discountable: false, amount: 0, sequencenumber: 6, id: 8, rentprice: 0 }
+    { feefor: "Computer", discountable: true, amount: 0, sequencenumber: 2, id: 2, rentprice: 0 },
+    { feefor: "Bracelet", discountable: true, amount: 0, sequencenumber: 3, id: 3, rentprice: 0 },
+    { feefor: "Discount", discountable: true, amount: 0, sequencenumber: 4, id: 4, rentprice: 0 },
+    { feefor: "Total", discountable: false, amount: 0, sequencenumber: 5, id: 5, rentprice: 0 }
     ],
     isguest: isguestinfo,
-    parkingnotreq: false,
-    isBulkUpload: false
+    isBulkUpload: false,
+    destination: [],
+    tourtype: 1,
+    finaldiscount: 0
   });
   const [feesdata, setFeesData] = useState([]);
   const [show, toggleShow] = useState();
   const [disclaimer, setDisclaimer] = useState("");
+  const [destination, setDestination] = useState([]);
   const clickevent = e => {
 
   }
@@ -142,6 +139,7 @@ const RegisterNew = () => {
 
       })
       .catch(function (edata) {
+
         notify(2, edata.toString(), 1);
       });
 
@@ -151,7 +149,8 @@ const RegisterNew = () => {
 
 
   useEffect(() => {
-    getfees();
+    //getfees();
+
     getpagedata();
   }, [])
   const editbook = () => {
@@ -172,38 +171,17 @@ const RegisterNew = () => {
             if (pagedata != "") {
               setRegistrationModalPopUp(true);
             }
-
-
           }
-
-          // setSeteditorval({ ...editorvalue, result });
-          // setSetedit({ ...edit, ["value"]: result});
-          //setFeesdata({ ...feedata, ["data"]: result });
         } else {
           //  notify(2,"No data found");
         }
-
       })
       .catch(function (edata) {
         notify(2, edata.toString(), 1);
       });
 
   }
-  useEffect(() => {
-    if (feesdata.data != undefined) {
-      if (feesdata.data.length > 0) {
-        var feesdatavalues = travelinfo.fees
 
-        for (let index = 0; index < feesdata.data.length; index++) {
-          var filterdata = feesdatavalues.filter(x => x.id == feesdata.data[index].id);
-          if (filterdata.length > 0) {
-            filterdata[0].amount = parseFloat(feesdata.data[index].price);
-            filterdata[0].rentprice = parseFloat(feesdata.data[index].rentprice);
-          }
-        }
-      }
-    }
-  }, [feesdata]);
   const [gacc, setgacc] = useState(travelinfo);
   return (<>
 
@@ -220,13 +198,8 @@ const RegisterNew = () => {
             <Card.Body>
               <div className="row">
                 <div className="col-12" style={{ display: isguestinfo == true ? "none" : "" }}>
-                  <TravelInfo data={gacc}></TravelInfo>
-
+                  <TravelInfo data={gacc} destinationdata={destination}></TravelInfo>
                 </div>
-                {/* <div  className="col-12"  style={{ display: isguestinfo == true ? "" : "none" }}>
-                          <GuestInfo data={contextdata} ></GuestInfo>
-                        </div> */}
-
               </div>
 
             </Card.Body>
@@ -235,27 +208,9 @@ const RegisterNew = () => {
 
         </Card>
       </CContainer>
-      <CModal show={registrationmodalpopup} closeOnBackdrop={true} backdrop={true} onClose={() => setRegistrationModalPopUp(!registrationmodalpopup)} size="lg">
-        <CModalHeader >
-          <CModalTitle>NOTICE </CModalTitle>
-        </CModalHeader>
-        <CModalBody>
-          <CCol md="12">
-            <>
-              <div dangerouslySetInnerHTML={{ __html: disclaimer }}></div>
-            </>
-          </CCol>
-          <CButton color="primary " style={{ float: "right" }} onClick={() => setRegistrationModalPopUp(!registrationmodalpopup)}>Create Booking</CButton>
-
-          <a href="#/editbooking" className="btn btn-primary" style={{ float: "right", "marginRight": "2%" }}>Edit Booking</a>
 
 
-          {/* <CButton color="primary " style={{float: "right","marginRight": "2%"}} onClick={() =>{}} ></CButton> */}
-        </CModalBody>
-
-      </CModal>
-
-    </div>
+    </div >
   </>)
 }
 export default RegisterNew;

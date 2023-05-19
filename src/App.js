@@ -32,39 +32,41 @@ const PenaltyClause = React.lazy(() => import('./views/pages/register/PenaltyCla
 const EditBooking = React.lazy(() => import('./views/pages/register/EditBooking'));
 const FAQs = React.lazy(() => import('./views/pages/register/FAQs'));
 const TourismPolicy = React.lazy(() => import('./views/pages/register/TourismPolicy'));
+const Home = React.lazy(() => import('./views/pages/homepage/Home'));
 
 class App extends Component {
 
   render() {
     return (
       <>
-      <HashRouter>
+        <HashRouter>
           <React.Suspense fallback={loading}>
             <Switch>
-              <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
+              <Route exact path="/login" name="Login Page" render={props => <Login {...props} />} />
               {/* <Route exact path="/book" name="Register Page" render={props => <Book {...props}/>} /> */}
-              <Route path="/test" name="Register Page" render={props => <Test {...props}/>} />
-              <Route path="/register" name="Register Page" render={props => <Register {...props}/>} />
-              <Route path="/disclaimer" name="Disclaimer" render={props => <Disclaimer {...props}/>} />
-              <Route path="/accreditedresort" name="Accredited Resort" render={props => <AccreditedResort {...props}/>} />
-              <Route path="/paymentprocedure" name="Payment Procedure" render={props => <PaymentProcedure {...props}/>} />
-              <Route path="/refundprocedure" name="Refund Procedure" render={props => <RefundProcedure {...props}/>} />
-              <Route path="/penaltyclause" name="Refund Procedure" render={props => <PenaltyClause {...props}/>} />
-              <Route path="/editbooking" name="Edit Booking" render={props => <EditBooking {...props}/>} />
-              <Route path="/faq" name="FAQs" render={props => <FAQs {...props}/>} />
-              <Route path="/tourismpolicy" name="Tourism Policy" render={props => <TourismPolicy {...props}/>} />
-              
-              <Route path="/booking" name="Booking Page" render={props => <Booking {...props}/>} />
-              <Route path="/registernew" name="Register Page" render={props => <RegisterNew {...props}/>} />
-              <Route path="/paymentresult" name="Payment" render={props => <Payment {...props}/>} />
-              <Route exact path="/404" name="Page 404" render={props => <Page404 {...props}/>} />
-              <Route exact path="/500" name="Page 500" render={props => <Page500 {...props}/>} />
-              <Route path="/" name="Home" render={props => <TheLayout {...props}/>} />
+              <Route path="/test" name="Register Page" render={props => <Test {...props} />} />
+              <Route path="/register" name="Register Page" render={props => <Register {...props} />} />
+              <Route path="/disclaimer" name="Disclaimer" render={props => <Disclaimer {...props} />} />
+              <Route path="/accreditedresort" name="Accredited Resort" render={props => <AccreditedResort {...props} />} />
+              <Route path="/paymentprocedure" name="Payment Procedure" render={props => <PaymentProcedure {...props} />} />
+              <Route path="/refundprocedure" name="Refund Procedure" render={props => <RefundProcedure {...props} />} />
+              <Route path="/penaltyclause" name="Refund Procedure" render={props => <PenaltyClause {...props} />} />
+              <Route path="/editbooking" name="Edit Booking" render={props => <EditBooking {...props} />} />
+              <Route path="/faq" name="FAQs" render={props => <FAQs {...props} />} />
+              <Route path="/tourismpolicy" name="Tourism Policy" render={props => <TourismPolicy {...props} />} />
+
+              <Route path="/booking" name="Booking Page" render={props => <Booking {...props} />} />
+              <Route path="/registernew" name="Register Page" render={props => <RegisterNew {...props} />} />
+              <Route path="/paymentresult" name="Payment" render={props => <Payment {...props} />} />
+              <Route exact path="/404" name="Page 404" render={props => <Page404 {...props} />} />
+              <Route exact path="/500" name="Page 500" render={props => <Page500 {...props} />} />
+              <Route path="/" name="Home" render={props => <TheLayout {...props} />} />
+              <Route path="/homepage" name="Home Page" render={props => <Home {...props} />} />
               {/* <Route path="/" name="Register Page" render={props => <Register {...props}/>} /> */}
             </Switch>
           </React.Suspense>
-      </HashRouter>
-      <ToastContainer pauseOnHover={false} hideProgressBar={true} autoClose={1200} />
+        </HashRouter>
+        <ToastContainer pauseOnHover={false} hideProgressBar={true} autoClose={1200} />
       </>
     );
   }
